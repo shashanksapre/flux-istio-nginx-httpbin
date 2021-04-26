@@ -21,3 +21,8 @@ spec:
       autoscaleMax: 3
     sidecarInjectorWebhook:
       enableNamespacesByDefault: true
+    telemetry:
+      enabled: true
+      v2:
+        prometheus:
+          enabled: true
