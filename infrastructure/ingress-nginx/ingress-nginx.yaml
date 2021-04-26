@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+spec:
+  releaseName: ingress-nginx
+  chart:
+    spec:
+      chart: ./charts/ingress-nginx
+      sourceRef:
+        kind: GitRepository
+        name: ingress-nginx
+        namespace: flux-system
+  interval: 5m
+  values:
+    controller:
+      ingressClass: nginx
+      podAnnotations:
+        # Do not redirect inbound traffic to Envoy.
+        traffic.sidecar.istio.io/includeInboundPorts: ""
+        traffic.sidecar.istio.io/excludeInboundPorts: "80,443"
+        # Exclude outbound traffic to kubernetes master from redirection.
+        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.0.0.0/8"
+        sidecar.istio.io/inject: "true"
+      admissionWebhooks:
+        patch:
+          podAnnotations:
+            sidecar.istio.io/inject: "false"
+      replicaCount: 1
+      service:
+        enabled: true
+        annotations:
+          service.beta.kubernetes.io/aws-load-balancer-type: nlb
