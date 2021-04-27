@@ -31,4 +31,5 @@ spec:
             pullPolicy: IfNotPresent
           podAnnotations:
             sidecar.istio.io/inject: "false"
+          runAsUser: 2000
       replicaCount: 1
