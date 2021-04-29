@@ -20,8 +20,8 @@ spec:
         traffic.sidecar.istio.io/includeInboundPorts: ""
         traffic.sidecar.istio.io/excludeInboundPorts: "80,443"
         # Exclude outbound traffic to kubernetes master from redirection.
-        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.0.0.0/8"
-        sidecar.istio.io/inject: "true"
+        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.96.0.1/32"
+        # sidecar.istio.io/inject: "true"
       admissionWebhooks:
         patch:
           podAnnotations:
