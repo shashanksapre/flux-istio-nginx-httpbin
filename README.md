@@ -6,5 +6,5 @@ export GITHUB_USER=shanky53
 flux bootstrap github \
   --owner=shanky53 \
   --repository=flux-istio-nginx-httpbin \
-  --branch=main \
-  --path=./clusters/development-eu-west-1
+  --branch=develop \
+  --path=./clusters/development
