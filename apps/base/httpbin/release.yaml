@@ -12,6 +12,9 @@ spec:
         kind: GitRepository
         name: httpbin
         namespace: flux-system
+  dependsOn:
+  - name: istio-discovery
+    namespace: istio-system
   interval: 5m
   values:
     ingress:
