@@ -7,11 +7,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-<<<<<<< HEAD
     branch: main
-=======
-    branch: develop
->>>>>>> 60a0caf435a6ec8fbf14f52790eb3875744b176c
   secretRef:
     name: flux-system
   url: ssh://git@github.com/shanky53/flux-istio-nginx-httpbin
@@ -23,11 +19,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-<<<<<<< HEAD
-  path: ./clusters/development-eu-west-1
-=======
   path: ./clusters/development
->>>>>>> 60a0caf435a6ec8fbf14f52790eb3875744b176c
   prune: true
   sourceRef:
     kind: GitRepository
