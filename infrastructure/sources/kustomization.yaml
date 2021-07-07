@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - istio.yaml
+  - grafana.yaml
   - prometheus.yaml
   - jaeger.yaml
   - kiali.yaml
