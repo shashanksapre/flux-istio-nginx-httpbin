@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - istio.yaml
+  - kiali.yaml
   - ingress-nginx.yaml
   - httpbin.yaml
