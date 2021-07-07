@@ -15,5 +15,4 @@ spec:
   interval: 5m
   values:
     env:
-    - name: JAEGER_AGENT_PORT
-      value: "5775"
+      JAEGER_AGENT_PORT: "5775"

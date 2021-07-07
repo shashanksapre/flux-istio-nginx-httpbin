@@ -14,6 +14,7 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
-    env:
-    - name: JAEGER_AGENT_PORT
-      value: "5775"
+    server:
+      env:
+      - name: JAEGER_AGENT_PORT
+        value: "5775"
