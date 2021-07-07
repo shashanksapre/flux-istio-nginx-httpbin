@@ -4,13 +4,21 @@ metadata:
   name: ingress-nginx
 spec:
   releaseName: ingress-nginx
+  # chart:
+  #   spec:
+  #     chart: ./charts/ingress-nginx
+  #     sourceRef:
+  #       kind: GitRepository
+  #       name: ingress-nginx
+  #       namespace: flux-system
   chart:
     spec:
-      chart: ./charts/ingress-nginx
+      chart: ingress-nginx
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: ingress-nginx
         namespace: flux-system
+      interval: 1m
   dependsOn:
   - name: istio-discovery
     namespace: istio-system
