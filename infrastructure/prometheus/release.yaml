@@ -13,3 +13,7 @@ spec:
         name: prometheus
         namespace: flux-system
   interval: 5m
+  values:
+    env:
+    - name: JAEGER_AGENT_PORT
+      value: "5775"
