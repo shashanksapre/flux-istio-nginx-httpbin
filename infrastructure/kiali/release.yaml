@@ -19,8 +19,8 @@ spec:
     auth:
       strategy: "anonymous"
     deployment:
-      image_version: latest
-      version_label: latest
+      image_version: v1.35.0
+      version_label: v1.35.0
       pod_annotations:
         sidecar.istio.io/inject: "false"
     external_services:
