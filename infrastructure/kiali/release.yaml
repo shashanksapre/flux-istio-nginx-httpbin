@@ -21,7 +21,8 @@ spec:
     deployment:
       image_version: latest
       version_label: latest
-      sidecar.istio.io/inject: "false"
+      pod_annotations:
+        sidecar.istio.io/inject: "false"
     external_services:
       grafana:
         url: http://grafana.istio-system
