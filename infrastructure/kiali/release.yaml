@@ -21,3 +21,10 @@ spec:
     deployment:
       image_version: latest
       version_label: latest
+    external_services:
+      grafana:
+        url: http://grafana.istio-system
+      prometheus:
+        url: http://prometheus-server.istio-system
+      custom_dashboards:
+        enabled: false
