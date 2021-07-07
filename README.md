@@ -8,3 +8,6 @@ flux bootstrap github \
   --repository=flux-istio-nginx-httpbin \
   --branch=develop \
   --path=./clusters/development
+
+
+`flux bootstrap github --owner=shanky53 --repository=flux-istio-nginx-httpbin --branch=istio-addons --path=./clusters/development`

@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - istio.yaml
+  - prometheus.yaml
+  - jaeger.yaml
   - kiali.yaml
   - ingress-nginx.yaml
   - httpbin.yaml
