@@ -18,8 +18,7 @@ spec:
   values:
     server:
       podAnnotations:
-        # Exclude outbound traffic to kubernetes master from redirection.
-        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.96.0.1/32"
+        sidecar.istio.io/inject: "false"
       env:
       - name: JAEGER_AGENT_PORT
         value: "5775"

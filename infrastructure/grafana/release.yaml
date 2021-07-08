@@ -16,5 +16,7 @@ spec:
   - name: istio-discovery
   interval: 5m
   values:
+    podAnnotations:
+      sidecar.istio.io/inject: "false"
     env:
       JAEGER_AGENT_PORT: "5775"

@@ -15,3 +15,16 @@ spec:
   dependsOn:
   - name: istio-discovery  
   interval: 5m
+  values:
+    schema:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+    agent:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+    collector:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+    query:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
