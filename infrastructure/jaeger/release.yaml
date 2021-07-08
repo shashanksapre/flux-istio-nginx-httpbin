@@ -17,12 +17,15 @@ spec:
   interval: 5m
   values:
     provisionDataStore:
-      cassandra: false
+      cassandra: true
       elasticsearch: false
-      kafka: true
+      kafka: false
     storage:
       # allowed values (cassandra, elasticsearch)
-      type: kafka
+      type: cassandra
+    cassandra:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"
