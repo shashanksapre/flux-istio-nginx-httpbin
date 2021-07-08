@@ -25,6 +25,9 @@ spec:
     alertmanager:
       podAnnotations:
         sidecar.istio.io/inject: "false"
+    kubeStateMetrics:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
     nodeExporter:
       podAnnotations:
         sidecar.istio.io/inject: "false"
