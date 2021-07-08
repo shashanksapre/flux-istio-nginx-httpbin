@@ -22,3 +22,12 @@ spec:
       env:
       - name: JAEGER_AGENT_PORT
         value: "5775"
+    alertmanager:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+    nodeExporter:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+    pushgateway:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
