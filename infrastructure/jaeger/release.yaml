@@ -16,6 +16,13 @@ spec:
   - name: istio-discovery  
   interval: 5m
   values:
+    provisionDataStore:
+      cassandra: false
+      elasticsearch: false
+      kafka: true
+    storage:
+      # allowed values (cassandra, elasticsearch)
+      type: kafka
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"
