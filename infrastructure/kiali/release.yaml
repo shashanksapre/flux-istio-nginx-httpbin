@@ -42,7 +42,7 @@ spec:
           app_label: jaeger
           is_core: false
         enabled: true
-        in_cluster_url: http://jaeger-query.istio-system/jaeger:80
+        in_cluster_url: http://jaeger-query.istio-system/jaeger
         namespace_selector: true
         # url: 'http://localhost/jaeger'
         whitelist_istio_system:
