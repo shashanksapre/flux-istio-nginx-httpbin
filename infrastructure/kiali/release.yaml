@@ -16,8 +16,8 @@ spec:
   - name: istio-discovery
   - name: ingress-nginx
     namespace: default
-  - name: jaeger
-  - name: grafana
+  # - name: jaeger
+  # - name: grafana
   - name: prometheus
   interval: 5m
   values:
