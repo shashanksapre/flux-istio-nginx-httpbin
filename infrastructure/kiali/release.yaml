@@ -24,8 +24,48 @@ spec:
       pod_annotations:
         sidecar.istio.io/inject: "false"
     external_services:
+      tracing:
+        # auth:
+        #   ca_file: ''
+        #   insecure_skip_verify: false
+        #   password: ''
+        #   token: ''
+        #   type: none
+        #   use_kiali_token: false
+        #   username: ''
+        component_status:
+          app_label: jaeger
+          is_core: false
+        enabled: true
+        in_cluster_url: http://jaeger-query.istio-system/jaeger
+        namespace_selector: true
+        # url: 'http://localhost/jaeger'
+        whitelist_istio_system:
+        - jaeger-query
       grafana:
-        url: http://grafana.istio-system
+        # auth:
+        #   ca_file: ''
+        #   component_status:
+        #     app_label: grafana
+        #     is_core: false
+        #   insecure_skip_verify: false
+        #   password: ''
+        #   token: ''
+        #   type: none
+        #   use_kiali_token: false
+        #   username: ''
+        dashboards:
+        - name: Istio Service Dashboard
+          variables:
+            namespace: var-namespace
+            service: var-service
+        - name: Istio Workload Dashboard
+          variables:
+            namespace: var-namespace
+            workload: var-workload
+        enabled: true
+        in_cluster_url: http://grafana.istio-system:3000
+        # url: /system/grafana
       prometheus:
         url: http://prometheus-server.istio-system
       custom_dashboards:

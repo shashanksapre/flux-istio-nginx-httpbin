@@ -26,6 +26,8 @@ spec:
     cassandra:
       podAnnotations:
         sidecar.istio.io/inject: "false"
+      config:
+        cluster_size: 1
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"

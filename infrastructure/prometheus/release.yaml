@@ -16,6 +16,16 @@ spec:
   - name: istio-discovery
   interval: 5m
   values:
+    serviceAccounts:
+      alertmanager:
+        create: false
+      nodeExporter:
+        create: false
+      pushgateway:
+        create: false
+      server:
+        create: true
+        name: prometheus
     server:
       podAnnotations:
         sidecar.istio.io/inject: "false"
@@ -23,14 +33,18 @@ spec:
       - name: JAEGER_AGENT_PORT
         value: "5775"
     alertmanager:
+      enabled: false
       podAnnotations:
         sidecar.istio.io/inject: "false"
     kubeStateMetrics:
+      enabled: false
       podAnnotations:
         sidecar.istio.io/inject: "false"
     nodeExporter:
+      enabled: false
       podAnnotations:
         sidecar.istio.io/inject: "false"
     pushgateway:
+      enabled: false
       podAnnotations:
         sidecar.istio.io/inject: "false"

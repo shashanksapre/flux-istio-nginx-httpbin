@@ -104,6 +104,49 @@ data:
     external_services:
       custom_dashboards:
         enabled: true
+      tracing:
+        auth:
+          ca_file: ''
+          insecure_skip_verify: false
+          password: ''
+          token: ''
+          type: none
+          use_kiali_token: false
+          username: ''
+        component_status:
+          app_label: jaeger
+          is_core: false
+        enabled: true
+        in_cluster_url: http://tracing.istio-system/jaeger
+        namespace_selector: true
+        url: 'http://localhost/jaeger'
+        whitelist_istio_system:
+        - jaeger-query
+        - istio-ingressgateway
+      grafana:
+        auth:
+          ca_file: ''
+          component_status:
+            app_label: grafana
+            is_core: false
+          insecure_skip_verify: false
+          password: ''
+          token: ''
+          type: none
+          use_kiali_token: false
+          username: ''
+        dashboards:
+        - name: Istio Service Dashboard
+          variables:
+            namespace: var-namespace
+            service: var-service
+        - name: Istio Workload Dashboard
+          variables:
+            namespace: var-namespace
+            workload: var-workload
+        enabled: true
+        in_cluster_url: http://grafana.istio-system:3000
+        url: /system/grafana
     identity:
       cert_file: ""
       private_key_file: ""
