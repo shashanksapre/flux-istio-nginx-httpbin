@@ -30,9 +30,9 @@ spec:
     server:
       podAnnotations:
         sidecar.istio.io/inject: "false"
-      env:
-      - name: JAEGER_AGENT_PORT
-        value: "5775"
+      # env:
+      # - name: JAEGER_AGENT_PORT
+      #   value: "5775"
     alertmanager:
       enabled: false
       podAnnotations:
