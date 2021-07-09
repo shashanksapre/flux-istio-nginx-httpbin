@@ -31,3 +31,8 @@ spec:
     global:
       hub: docker.io/istio
       tag: "1.10.2"
+      proxy:
+        tracer: "zipkin"
+      tracer:
+        zipkin:
+          address: "jaeger-collector.istio-system:9411"

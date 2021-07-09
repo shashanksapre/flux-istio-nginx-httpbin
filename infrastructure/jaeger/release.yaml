@@ -37,6 +37,9 @@ spec:
     collector:
       podAnnotations:
         sidecar.istio.io/inject: "false"
+      service:
+        zipkin:
+          port: 9411
     query:
       podAnnotations:
         sidecar.istio.io/inject: "false"
