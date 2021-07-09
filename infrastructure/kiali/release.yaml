@@ -43,24 +43,21 @@ spec:
       web_root: /kiali
     external_services:
       tracing:
-        # auth:
-        #   ca_file: ''
-        #   insecure_skip_verify: false
-        #   password: ''
-        #   token: ''
-        #   type: none
-        #   use_kiali_token: false
-        #   username: ''
-        component_status:
-          app_label: jaeger
-          is_core: false
+        auth:
+          ca_file: ''
+          insecure_skip_verify: true
+          password: ''
+          token: ''
+          type: none
+          use_kiali_token: false
+          username: ''
         enabled: true
-        service: "jaeger-query"
-        in_cluster_url: http://jaeger-query.istio-system/jaeger
+        in_cluster_url: "http://jaeger-query.istio-system"
         namespace_selector: true
         # url: 'http://localhost/jaeger'
         whitelist_istio_system:
         - jaeger-query
+        - istio-ingressgateway
       # grafana:
         # auth:
         #   ca_file: ''
