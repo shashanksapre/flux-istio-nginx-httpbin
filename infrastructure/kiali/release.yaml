@@ -69,9 +69,9 @@ spec:
             namespace: var-namespace
             workload: var-workload
         enabled: true
-        in_cluster_url: http://grafana.istio-system:80
+        in_cluster_url: http://grafana.istio-system
         # url: /system/grafana
       prometheus:
-        url: http://prometheus-server.istio-system:80
+        url: http://prometheus-server.istio-system
       custom_dashboards:
         enabled: true
