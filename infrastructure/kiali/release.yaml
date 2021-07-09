@@ -28,6 +28,19 @@ spec:
       version_label: v1.35.0
       pod_annotations:
         sidecar.istio.io/inject: "false"
+      custom_dashboards:
+        excludes:
+        - ""
+        includes:
+        - '*'
+      ingress_enabled: false
+      secret_name: kiali
+    istio_namespace: istio-system
+    server:
+      port: 20001
+      metrics_enabled: true
+      metrics_port: 9090
+      web_root: /kiali
     external_services:
       # tracing:
         # auth:
