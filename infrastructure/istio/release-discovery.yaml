@@ -28,4 +28,4 @@ spec:
           enabled: true
     global:
       hub: docker.io/istio
-      tag: "1.10.0"
+      tag: "1.10.2"
