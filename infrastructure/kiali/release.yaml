@@ -55,6 +55,7 @@ spec:
           app_label: jaeger
           is_core: false
         enabled: true
+        service: "jaeger-query"
         in_cluster_url: http://jaeger-query.istio-system/jaeger
         namespace_selector: true
         # url: 'http://localhost/jaeger'
