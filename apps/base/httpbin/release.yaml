@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: httpbin
   namespace: default
+  labels:
+    app: ingress-nginx
+    version: 0.1
 spec:
   releaseName: httpbin
   chart:
