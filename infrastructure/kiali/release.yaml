@@ -42,7 +42,7 @@ spec:
           app_label: jaeger
           is_core: false
         enabled: true
-        in_cluster_url: http://jaeger-query.istio-system/jaeger
+        in_cluster_url: http://jaeger-query.istio-system/jaeger:80
         namespace_selector: true
         # url: 'http://localhost/jaeger'
         whitelist_istio_system:
@@ -69,9 +69,9 @@ spec:
             namespace: var-namespace
             workload: var-workload
         enabled: true
-        in_cluster_url: http://grafana.istio-system
+        in_cluster_url: http://grafana.istio-system:80
         # url: /system/grafana
       prometheus:
-        url: http://prometheus-server.istio-system
+        url: http://prometheus-server.istio-system:80
       custom_dashboards:
         enabled: true
