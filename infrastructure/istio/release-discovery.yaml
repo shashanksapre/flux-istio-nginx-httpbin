@@ -18,6 +18,7 @@ spec:
     meshConfig:
       enableTracing: true
     pilot:
+      traceSampling: 100
       autoscaleEnabled: true
       autoscaleMin: 1
       autoscaleMax: 3
