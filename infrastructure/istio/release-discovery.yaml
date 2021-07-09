@@ -27,5 +27,5 @@ spec:
         prometheus:
           enabled: true
     global:
-      hub: gcr.io/istio-release
+      hub: docker.io/istio
       tag: latest
