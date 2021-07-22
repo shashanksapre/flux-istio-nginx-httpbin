@@ -4,8 +4,8 @@ metadata:
   name: httpbin
   namespace: default
   labels:
-    app: httpbin
-    version: 0.1
+    app: "httpbin"
+    version: "0.1"
 spec:
   releaseName: httpbin
   chart:
