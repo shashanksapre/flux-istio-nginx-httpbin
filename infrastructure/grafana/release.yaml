@@ -19,5 +19,5 @@ spec:
   values:
     podAnnotations:
       sidecar.istio.io/inject: "false"
-    env:
-      JAEGER_AGENT_PORT: "5775"
+    # env:
+    #   JAEGER_AGENT_PORT: "5775"

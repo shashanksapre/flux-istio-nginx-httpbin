@@ -17,7 +17,7 @@ spec:
   - name: ingress-nginx
     namespace: default
   - name: jaeger
-  # - name: grafana
+  - name: grafana
   - name: prometheus
   interval: 5m
   values:
@@ -58,30 +58,30 @@ spec:
         whitelist_istio_system:
         - jaeger-query
         - istio-ingressgateway
-      # grafana:
-        # auth:
-        #   ca_file: ''
-        #   component_status:
-        #     app_label: grafana
-        #     is_core: false
-        #   insecure_skip_verify: false
-        #   password: ''
-        #   token: ''
-        #   type: none
-        #   use_kiali_token: false
-        #   username: ''
-        # dashboards:
-        # - name: Istio Service Dashboard
-        #   variables:
-        #     namespace: var-namespace
-        #     service: var-service
-        # - name: Istio Workload Dashboard
-        #   variables:
-        #     namespace: var-namespace
-        #     workload: var-workload
-        # enabled: true
-        # in_cluster_url: http://grafana.istio-system
-        # url: /system/grafana
+      grafana:
+        auth:
+          ca_file: ''
+          component_status:
+            app_label: grafana
+            is_core: false
+          insecure_skip_verify: false
+          password: ''
+          token: ''
+          type: none
+          use_kiali_token: false
+          username: ''
+        dashboards:
+        - name: Istio Service Dashboard
+          variables:
+            namespace: var-namespace
+            service: var-service
+        - name: Istio Workload Dashboard
+          variables:
+            namespace: var-namespace
+            workload: var-workload
+        enabled: true
+        in_cluster_url: http://grafana.istio-system
+        url: /system/grafana
       prometheus:
         url: http://prometheus-server.istio-system
       custom_dashboards:
