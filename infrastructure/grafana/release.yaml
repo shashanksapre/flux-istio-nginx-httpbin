@@ -20,4 +20,16 @@ spec:
     podAnnotations:
       sidecar.istio.io/inject: "false"
     env:
-      JAEGER_AGENT_PORT: "5775"
+      # JAEGER_AGENT_PORT: "5775"
+    - name: "GF_AUTH_ANONYMOUS_ENABLED"
+      value: "true"
+    - name: "GF_AUTH_ANONYMOUS_ORG_ROLE"
+      value: "Admin"
+    - name: "GF_AUTH_BASIC_ENABLED"
+      value: "false"
+    - name: "GF_SECURITY_ADMIN_PASSWORD"
+      value: "-"
+    - name: "GF_SECURITY_ADMIN_USER"
+      value: "-"
+    - name: "JAEGER_AGENT_PORT"
+      value: "5775"
