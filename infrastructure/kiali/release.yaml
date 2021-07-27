@@ -91,7 +91,7 @@ spec:
             workload: var-workload
         enabled: true
         in_cluster_url: http://grafana.istio-system
-        url: "http://grafana.local"
+        url: "system/grafana"
       prometheus:
         url: http://prometheus-server.istio-system
       custom_dashboards:
