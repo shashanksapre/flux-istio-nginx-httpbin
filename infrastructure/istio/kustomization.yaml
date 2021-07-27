@@ -6,6 +6,6 @@ resources:
   - release-base.yaml
   - release-discovery.yaml
   - addon-jaeger.yaml
-  - addon-promethrus.yaml
+  - addon-prometheus.yaml
   - addon-grafana.yaml
   - addon-kiali.yaml
