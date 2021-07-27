@@ -35,7 +35,7 @@ spec:
         - '*'
       ingress_enabled: true
       override_ingress_yaml:
-        metadata: |
+        metadata:
           annotations:
             kubernetes.io/ingress.class: nginx
             nginx.ingress.kubernetes.io/service-upstream: "true"
