@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: istio-system
+spec:
+  releaseName: grafana
+  chart:
+    spec:
+      chart: ./charts/grafana
+      sourceRef:
+        kind: GitRepository
+        name: grafana
+        namespace: flux-system
+  dependsOn:
+  - name: istio-discovery
+  - name: jaeger
+  interval: 5m
+  values:
+    podAnnotations:
+      sidecar.istio.io/inject: "false"
+    env:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: "Admin"
+      GF_AUTH_BASIC_ENABLED: "false"
+      GF_SECURITY_ADMIN_PASSWORD: "-"
+      GF_SECURITY_ADMIN_USER: "-"
+      JAEGER_AGENT_PORT: "5775"

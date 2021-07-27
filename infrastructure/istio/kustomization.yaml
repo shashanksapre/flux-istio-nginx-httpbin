@@ -5,7 +5,7 @@ resources:
   - namespace.yaml
   - release-base.yaml
   - release-discovery.yaml
-  - addon-jaeger.yaml
-  - addon-prometheus.yaml
-  - addon-grafana.yaml
-  - addon-kiali.yaml
+  # - addon-jaeger.yaml
+  # - addon-prometheus.yaml
+  # - addon-grafana.yaml
+  # - addon-kiali.yaml
