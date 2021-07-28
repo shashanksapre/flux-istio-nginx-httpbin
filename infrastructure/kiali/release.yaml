@@ -47,6 +47,12 @@ spec:
           #   paths: [ / ]
       secret_name: kiali
     istio_namespace: istio-system
+    kubernetes_config:
+      excluded_workloads:
+      - "CronJob"
+      - "DeploymentConfig"
+      # - "Job"
+      - "ReplicationController"
     server:
       port: 20001
       metrics_enabled: true
