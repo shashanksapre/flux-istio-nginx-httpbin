@@ -3,8 +3,4 @@ kind: Kustomization
 resources:
   - sources
   - istio
-  # - grafana
-  # - prometheus
-  # - jaeger
-  # - kiali
   - ingress-nginx
