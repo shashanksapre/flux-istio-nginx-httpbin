@@ -36,4 +36,4 @@ spec:
         tracer: "zipkin"
       tracer:
         zipkin:
-          address: "jaeger-collector.istio-system:9411"
+          address: "zipkin.istio-system:9411"
