@@ -33,6 +33,7 @@ spec:
       hub: docker.io/istio
       tag: "1.10.2"
       proxy:
+        excludeIPRanges: "10.96.0.1/32"
         tracer: "zipkin"
       tracer:
         zipkin:
