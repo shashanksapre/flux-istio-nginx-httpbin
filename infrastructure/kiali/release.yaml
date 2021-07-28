@@ -34,6 +34,8 @@ spec:
         includes:
         - '*'
       ingress_enabled: true
+      logger:
+        log_level: "debug"
       override_ingress_yaml:
         metadata:
           annotations:
