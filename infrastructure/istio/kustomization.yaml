@@ -5,7 +5,8 @@ resources:
   - namespace.yaml
   - release-base.yaml
   - release-discovery.yaml
-  # - addon-jaeger.yaml
-  # - addon-prometheus.yaml
-  # - addon-grafana.yaml
-  # - addon-kiali.yaml
+  - crds-monitoringdashboards.yaml
+  - addons-jaeger.yaml
+  - addons-prometheus.yaml
+  - addons-grafana.yaml
+  - addons-kiali.yaml
