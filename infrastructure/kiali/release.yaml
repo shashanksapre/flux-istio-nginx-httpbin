@@ -64,7 +64,7 @@ spec:
         enabled: true
         in_cluster_url: "http://jaeger-query.istio-system"
         namespace_selector: true
-        # url: 'http://localhost/jaeger'
+        url: 'http://jaeger.local'
         whitelist_istio_system:
         - jaeger-query
         - istio-ingressgateway
