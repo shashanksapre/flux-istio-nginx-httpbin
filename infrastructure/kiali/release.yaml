@@ -33,7 +33,7 @@ spec:
         - ""
         includes:
         - '*'
-      ingress_enabled: true
+      ingress_enabled: false
       logger:
         log_level: "debug"
       override_ingress_yaml:
@@ -57,8 +57,8 @@ spec:
       port: 20001
       metrics_enabled: true
       metrics_port: 9090
-      web_root: /kiali
-      web_fqdn: kiali.local
+      # web_root: /kiali
+      # web_fqdn: kiali.local
     external_services:
       tracing:
         auth:
