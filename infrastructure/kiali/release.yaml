@@ -56,8 +56,8 @@ spec:
     server:
       port: 20001
       metrics_enabled: true
-      metrics_port: 80
-      # web_root: /kiali
+      metrics_port: 9090
+      web_root: /kiali
       # web_fqdn: kiali.local
     external_services:
       # tracing:
