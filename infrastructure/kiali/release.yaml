@@ -60,71 +60,71 @@ spec:
       # web_root: /kiali
       # web_fqdn: kiali.local
     external_services:
-      tracing:
-        auth:
-          ca_file: ''
-          insecure_skip_verify: true
-          password: ''
-          token: ''
-          type: none
-          use_kiali_token: false
-          username: ''
-        enabled: true
-        in_cluster_url: "http://jaeger-query.istio-system"
-        namespace_selector: true
-        url: 'http://jaeger.local'
-        whitelist_istio_system:
-        - jaeger-query
-        - istio-ingressgateway
-      grafana:
-        auth:
-          ca_file: ''
-          component_status:
-            app_label: grafana
-            is_core: false
-          insecure_skip_verify: false
-          password: ''
-          token: ''
-          type: none
-          use_kiali_token: false
-          username: ''
-        dashboards:
-        - name: Istio Service Dashboard
-          variables:
-            namespace: var-namespace
-            service: var-service
-        - name: Istio Workload Dashboard
-          variables:
-            namespace: var-namespace
-            workload: var-workload
-        enabled: true
-        in_cluster_url: http://grafana.istio-system
-        url: "http://grafana.local"
+      # tracing:
+      #   auth:
+      #     ca_file: ''
+      #     insecure_skip_verify: true
+      #     password: ''
+      #     token: ''
+      #     type: none
+      #     use_kiali_token: false
+      #     username: ''
+      #   enabled: true
+      #   in_cluster_url: "http://jaeger-query.istio-system"
+      #   namespace_selector: true
+      #   url: 'http://jaeger.local'
+      #   whitelist_istio_system:
+      #   - jaeger-query
+      #   - istio-ingressgateway
+      # grafana:
+      #   auth:
+      #     ca_file: ''
+      #     component_status:
+      #       app_label: grafana
+      #       is_core: false
+      #     insecure_skip_verify: false
+      #     password: ''
+      #     token: ''
+      #     type: none
+      #     use_kiali_token: false
+      #     username: ''
+      #   dashboards:
+      #   - name: Istio Service Dashboard
+      #     variables:
+      #       namespace: var-namespace
+      #       service: var-service
+      #   - name: Istio Workload Dashboard
+      #     variables:
+      #       namespace: var-namespace
+      #       workload: var-workload
+      #   enabled: true
+      #   in_cluster_url: http://grafana.istio-system
+      #   url: "http://grafana.local"
       prometheus:
-        auth:
-          ca_file: ""
-          insecure_skip_verify: false
-          password: ""
-          token: ""
-          type: "none"
-          use_kiali_token: false
-          username: ""
-        cache_duration: 10
-        cache_enabled: true
-        cache_expiration: 300
-        health_check_url: ""
-        is_core: true
+        # auth:
+        #   ca_file: ""
+        #   insecure_skip_verify: false
+        #   password: ""
+        #   token: ""
+        #   type: "none"
+        #   use_kiali_token: false
+        #   username: ""
+        # cache_duration: 10
+        # cache_enabled: true
+        # cache_expiration: 300
+        # health_check_url: ""
+        # is_core: true
         url: http://prometheus-server.istio-system:9090
       custom_dashboards:
         enabled: true
-        prometheus:
-          auth:
-            ca_file: ""
-            insecure_skip_verify: false
-            password: ""
-            token: ""
-            type: "none"
-            use_kiali_token: false
-            username: ""
-          health_check_url: ""
-          url: "http://prometheus-server.istio-system:9090"
+        # prometheus:
+        #   auth:
+        #     ca_file: ""
+        #     insecure_skip_verify: false
+        #     password: ""
+        #     token: ""
+        #     type: "none"
+        #     use_kiali_token: false
+        #     username: ""
+        #   health_check_url: ""
+        #   url: "http://prometheus-server.istio-system:9090"
