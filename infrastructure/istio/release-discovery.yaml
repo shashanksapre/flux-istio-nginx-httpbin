@@ -31,7 +31,7 @@ spec:
           enabled: true
     global:
       hub: docker.io/istio
-      tag: "1.10.2"
+      tag: "1.10.3"
       proxy:
         tracer: "zipkin"
       tracer:
