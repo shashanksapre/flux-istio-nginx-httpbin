@@ -26,10 +26,9 @@ spec:
         create: false
       server:
         create: true
-        name: prometheus
-        service:
-          servicePort: 9090
     server:
+      service:
+          servicePort: 9090
       podAnnotations:
         sidecar.istio.io/inject: "false"
       env:

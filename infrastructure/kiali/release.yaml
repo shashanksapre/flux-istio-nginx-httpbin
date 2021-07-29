@@ -114,7 +114,7 @@ spec:
         # cache_expiration: 300
         # health_check_url: ""
         # is_core: true
-        url: http://prometheus-server.istio-system
+        url: http://prometheus-server.istio-system:9090
       custom_dashboards:
         enabled: true
         # prometheus:
