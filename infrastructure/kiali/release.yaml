@@ -70,7 +70,7 @@ spec:
           use_kiali_token: false
           username: ''
         enabled: true
-        in_cluster_url: "http://jaeger-query.istio-system/jaeger"
+        in_cluster_url: "http://jaeger-query.istio-system"
         namespace_selector: true
         url: 'http://jaeger.local'
         whitelist_istio_system:
