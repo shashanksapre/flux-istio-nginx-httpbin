@@ -6,6 +6,8 @@ metadata:
   labels:
     app: "httpbin"
     version: "0.1"
+    app.kubernetes.io/name: "httpbin"
+    app.kubernetes.io/version: "0.1"
 spec:
   releaseName: httpbin
   chart:

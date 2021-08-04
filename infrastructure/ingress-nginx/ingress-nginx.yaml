@@ -5,6 +5,8 @@ metadata:
   labels:
     app: "ingress-nginx"
     version: "0.1"
+    app.kubernetes.io/name: "ingress-nginx"
+    app.kubernetes.io/version: "0.1"
 spec:
   releaseName: ingress-nginx
   # chart:
