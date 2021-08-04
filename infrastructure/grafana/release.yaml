@@ -26,3 +26,10 @@ spec:
       GF_SECURITY_ADMIN_PASSWORD: "-"
       GF_SECURITY_ADMIN_USER: "-"
       JAEGER_AGENT_PORT: "5775"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      hosts:
+      - grafana.local
