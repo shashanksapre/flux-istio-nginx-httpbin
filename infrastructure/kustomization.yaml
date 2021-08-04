@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - sources
   - istio
-  # - grafana
+  - grafana
   - prometheus
   - jaeger
   - kiali
