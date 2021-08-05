@@ -33,6 +33,8 @@ spec:
       labels:
         app: "ingress-nginx"
         version: "0.1"
+      podLabels:
+        app.kubernetes.io/name: "ingress-nginx-controller"
       ingressClass: nginx
       podAnnotations:
         # Do not redirect inbound traffic to Envoy.
