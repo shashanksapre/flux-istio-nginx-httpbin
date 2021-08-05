@@ -47,6 +47,9 @@ spec:
             sidecar.istio.io/inject: "false"
       replicaCount: 1
       service:
+        labels:
+          app: "ingress-nginx"
+          version: "0.1"
         enabled: true
         annotations:
           service.beta.kubernetes.io/aws-load-balancer-type: nlb
