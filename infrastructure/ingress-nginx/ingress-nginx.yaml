@@ -30,6 +30,9 @@ spec:
   interval: 5m
   values:
     controller:
+      labels:
+        app: "ingress-nginx"
+        version: "0.1"
       ingressClass: nginx
       podAnnotations:
         # Do not redirect inbound traffic to Envoy.
