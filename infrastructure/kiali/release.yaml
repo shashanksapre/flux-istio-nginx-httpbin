@@ -59,6 +59,18 @@ spec:
       web_root: /kiali
       # web_fqdn: kiali.local
     external_services:
+      istio:
+        component_status:
+          components:
+          - app_label: istiod
+            is_core: true
+            is_proxy: false
+          - app_label: istio-ingressgateway
+            is_core: false
+            is_proxy: false
+          - app_label: istio-egressgateway
+            is_core: false
+            is_proxy: false
       tracing:
         auth:
           ca_file: ''
