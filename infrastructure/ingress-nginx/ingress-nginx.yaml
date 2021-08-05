@@ -33,17 +33,17 @@ spec:
       # labels:
       #   app: "ingress-nginx"
       #   version: "0.1"
-      podLabels:
-        app.kubernetes.io/name: "ingress-nginx-controller"
-        app.kubernetes.io/component: "controller"
-        app.kubernetes.io/instance: "ingress-nginx"
-        app: "ingress-nginx-controller"
-        app.kubernetes.io/managed-by: "Helm"
-        app.kubernetes.io/version: "0.48.1"
-        helm.sh/chart: "ingress-nginx-3.35.0"
-        helm.toolkit.fluxcd.io/name: "ingress-nginx"
-        helm.toolkit.fluxcd.io/namespace: "default"
-        version: "0.1"
+      # podLabels:
+      #   app.kubernetes.io/name: "ingress-nginx-controller"
+      #   app.kubernetes.io/component: "controller"
+      #   app.kubernetes.io/instance: "ingress-nginx"
+      #   app: "ingress-nginx-controller"
+      #   app.kubernetes.io/managed-by: "Helm"
+      #   app.kubernetes.io/version: "0.48.1"
+      #   helm.sh/chart: "ingress-nginx-3.35.0"
+      #   helm.toolkit.fluxcd.io/name: "ingress-nginx"
+      #   helm.toolkit.fluxcd.io/namespace: "default"
+      #   version: "0.1"
       ingressClass: nginx
       podAnnotations:
         # Do not redirect inbound traffic to Envoy.
