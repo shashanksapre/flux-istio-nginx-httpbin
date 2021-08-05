@@ -44,8 +44,8 @@ spec:
             nginx.ingress.kubernetes.io/upstream-vhost: kiali.istio-system.svc.cluster.local
       secret_name: kiali
     istio_namespace: istio-system
-    # istio_labels:
-    #   app_label_name: "app.kubernetes.io/name"
+    istio_labels:
+      app_label_name: "app.kubernetes.io/name"
     kubernetes_config:
       excluded_workloads:
       - "CronJob"
