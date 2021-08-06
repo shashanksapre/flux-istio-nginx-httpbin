@@ -13,8 +13,9 @@ spec:
         name: jaeger
         namespace: flux-system
   dependsOn:
-  - name: ingress-nginx
-    namespace: default
+  # - name: ingress-nginx
+  #   namespace: default
+  - name: istio-discovery
   interval: 5m
   values:
     provisionDataStore:
