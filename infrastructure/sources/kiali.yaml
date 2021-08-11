@@ -13,4 +13,4 @@ spec:
   # For all available options, see:
   # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
   ref:
-    branch: v1.36
+    branch: v1.38
