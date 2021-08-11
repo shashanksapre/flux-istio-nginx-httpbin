@@ -31,6 +31,10 @@ spec:
           servicePort: 9090
       podAnnotations:
         sidecar.istio.io/inject: "false"
+      global:
+        evaluation_interval: 1m
+        scrape_interval: 15s
+        scrape_timeout: 10s
       env:
       - name: JAEGER_AGENT_PORT
         value: "5775"
