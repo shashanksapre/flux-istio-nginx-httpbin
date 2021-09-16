@@ -26,6 +26,7 @@ spec:
     deployment:
       image_version: v1.38.0
       version_label: v1.38.0
+      view_only_mode: true
       pod_annotations:
         sidecar.istio.io/inject: "false"
       custom_dashboards:
