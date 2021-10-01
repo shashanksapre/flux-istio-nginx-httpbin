@@ -34,6 +34,8 @@ spec:
     elasticsearch:
       podAnnotations:
         sidecar.istio.io/inject: "false"
+      image: "docker.elastic.co/elasticsearch/elasticsearch"
+      imageTag: "7.15.0"
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"
