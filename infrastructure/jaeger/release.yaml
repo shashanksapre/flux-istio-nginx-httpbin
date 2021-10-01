@@ -19,17 +19,21 @@ spec:
   interval: 5m
   values:
     provisionDataStore:
-      cassandra: true
-      elasticsearch: false
+      cassandra: false
+      elasticsearch: true
       kafka: false
     storage:
       # allowed values (cassandra, elasticsearch)
-      type: cassandra
-    cassandra:
+      # type: cassandra
+      type: elasticsearch
+    # cassandra:
+    #   podAnnotations:
+    #     sidecar.istio.io/inject: "false"
+    #   config:
+    #     cluster_size: 1
+    elasticsearch:
       podAnnotations:
         sidecar.istio.io/inject: "false"
-      config:
-        cluster_size: 1
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"
