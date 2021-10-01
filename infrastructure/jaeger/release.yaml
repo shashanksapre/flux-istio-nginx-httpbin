@@ -32,6 +32,12 @@ spec:
     #     sidecar.istio.io/inject: "false"
     #   config:
     #     cluster_size: 1
+      kafka:
+        brokers:
+          - jaeger-kafka-headless:9092
+        topic: jaeger_v1_test
+        authentication: none
+        extraEnv: []
     elasticsearch:
       podAnnotations:
         sidecar.istio.io/inject: "false"
@@ -72,4 +78,4 @@ spec:
           kubernetes.io/ingress.class: nginx
           kubernetes.io/tls-acme: "true"
     ingester:
-      enabled: false
+      enabled: true
