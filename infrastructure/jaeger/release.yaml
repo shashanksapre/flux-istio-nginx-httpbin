@@ -21,11 +21,12 @@ spec:
     provisionDataStore:
       cassandra: false
       elasticsearch: true
-      kafka: false
+      kafka: true
     storage:
       # allowed values (cassandra, elasticsearch)
       # type: cassandra
-      type: elasticsearch
+      # type: elasticsearch
+      type: kafka
     # cassandra:
     #   podAnnotations:
     #     sidecar.istio.io/inject: "false"
@@ -70,3 +71,5 @@ spec:
         annotations:
           kubernetes.io/ingress.class: nginx
           kubernetes.io/tls-acme: "true"
+    ingester:
+      enabled: false
