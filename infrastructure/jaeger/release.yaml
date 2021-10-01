@@ -36,6 +36,9 @@ spec:
         sidecar.istio.io/inject: "false"
       image: "docker.elastic.co/elasticsearch/elasticsearch"
       imageTag: "7.15.0"
+      replicas: 1
+      minimumMasterNodes: 1
+      clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
     schema:
       podAnnotations:
         sidecar.istio.io/inject: "false"
