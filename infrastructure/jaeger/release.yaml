@@ -79,3 +79,5 @@ spec:
           kubernetes.io/tls-acme: "true"
     ingester:
       enabled: true
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
