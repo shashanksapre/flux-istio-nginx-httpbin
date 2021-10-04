@@ -27,17 +27,17 @@ spec:
       # type: cassandra
       # type: elasticsearch
       type: kafka
-    # cassandra:
-    #   podAnnotations:
-    #     sidecar.istio.io/inject: "false"
-    #   config:
-    #     cluster_size: 1
       kafka:
         brokers:
           - jaeger-kafka-headless:9092
         topic: jaeger_v1_test
         authentication: none
         extraEnv: []
+    # cassandra:
+    #   podAnnotations:
+    #     sidecar.istio.io/inject: "false"
+    #   config:
+    #     cluster_size: 1
     elasticsearch:
       podAnnotations:
         sidecar.istio.io/inject: "false"
@@ -81,6 +81,14 @@ spec:
       enabled: true
       podAnnotations:
         sidecar.istio.io/inject: "false"
+      extraEnv:
+      - name: KAFKA_PRODUCER_BROKERS
+        value: jaeger-kafka-headless:9092
+      - name: KAFKA_PRODUCER_TOPIC
+        value: jaeger_v1_test
+      - name: KAFKA_PRODUCER_AUTHENTICATION
+        value: none
+
     kafka:
       podAnnotations:
         sidecar.istio.io/inject: "false"
