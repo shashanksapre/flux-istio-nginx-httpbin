@@ -10,4 +10,4 @@ flux bootstrap github \
   --path=./clusters/development
 
 
-`flux bootstrap github --owner=shanky53 --repository=flux-istio-nginx-httpbin --branch=jaeger-elastic --path=./clusters/development`
+`flux bootstrap github --owner=shanky53 --repository=flux-istio-nginx-httpbin --branch=jaeger-kafka-elastic --path=./clusters/development`
