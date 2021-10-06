@@ -77,18 +77,28 @@ spec:
         annotations:
           kubernetes.io/ingress.class: nginx
           kubernetes.io/tls-acme: "true"
+      extraEnv:
+      - name: SPAN_STORAGE_TYPE
+        value: cassandra
+      # - name: KAFKA_PRODUCER_BROKERS
+      #   value: jaeger-kafka-headless:9092
+      # - name: KAFKA_PRODUCER_TOPIC
+      #   value: jaeger_v1_test
+      # - name: KAFKA_PRODUCER_AUTHENTICATION
+      #   value: none
     ingester:
       enabled: true
       podAnnotations:
         sidecar.istio.io/inject: "false"
       extraEnv:
+      - name: SPAN_STORAGE_TYPE
+        value: cassandra
       - name: KAFKA_PRODUCER_BROKERS
         value: jaeger-kafka-headless:9092
       - name: KAFKA_PRODUCER_TOPIC
         value: jaeger_v1_test
       - name: KAFKA_PRODUCER_AUTHENTICATION
         value: none
-
     kafka:
       podAnnotations:
         sidecar.istio.io/inject: "false"
