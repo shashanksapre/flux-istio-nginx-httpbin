@@ -34,3 +34,5 @@ spec:
       enabled: false
     ingester:
       enabled: false
+    collector:
+      enabled: false
