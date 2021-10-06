@@ -30,7 +30,13 @@ spec:
           - jaeger-kafka-headless:9092
         topic: jaeger_v1_test
         authentication: none
-        # extraEnv: []
+        extraEnv:
+        - name: KAFKA_PRODUCER_BROKERS
+          value: jaeger-kafka-headless:9092
+        - name: KAFKA_PRODUCER_TOPIC
+          value: jaeger_v1_test
+        - name: KAFKA_PRODUCER_AUTHENTICATION
+          value: none
     agent:
       enabled: false
     query:
