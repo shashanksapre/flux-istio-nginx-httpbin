@@ -20,6 +20,14 @@ spec:
       cassandra: false
       elasticsearch: false
       kafka: false
+    storage:
+      type: elasticsearch
     agent:
       podAnnotations:
         sidecar.istio.io/inject: "false"
+    collector:
+      enabled: false
+    ingester:
+      enabled: false
+    query:
+      enabled: false
