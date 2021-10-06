@@ -18,8 +18,8 @@ spec:
   values:
     provisionDataStore:
       cassandra: false
-      elasticsearch: true
-      kafka: true
+      elasticsearch: false
+      kafka: false
     storage:
       type: elasticsearch
       elasticsearch:
