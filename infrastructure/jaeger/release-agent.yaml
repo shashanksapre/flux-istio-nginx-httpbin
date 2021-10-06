@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jaeger
+  namespace: istio-system
+spec:
+  releaseName: jaeger-agent
+  chart:
+    spec:
+      chart: ./charts/jaeger
+      sourceRef:
+        kind: GitRepository
+        name: jaeger
+        namespace: flux-system
+  dependsOn:
+  - name: istio-discovery
+  interval: 5m
+  values:
+    provisionDataStore:
+      cassandra: false
+      elasticsearch: false
+      kafka: false
+    agent:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"

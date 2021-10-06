@@ -1,0 +1,53 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jaeger
+  namespace: istio-system
+spec:
+  releaseName: jaeger-ingester
+  chart:
+    spec:
+      chart: ./charts/jaeger
+      sourceRef:
+        kind: GitRepository
+        name: jaeger
+        namespace: flux-system
+  dependsOn:
+  - name: istio-discovery
+  interval: 5m
+  values:
+    provisionDataStore:
+      cassandra: false
+      elasticsearch: true
+      kafka: true
+    storage:
+      type: elasticsearch
+      elasticsearch:
+        scheme: http
+        host: elasticsearch-master
+        port: 9200
+        user: elastic
+        usePassword: true
+        password: changeme
+        nodesWanOnly: false
+        # extraEnv: []
+        # cmdlineParams: {}
+    agent:
+      enabled: false
+    query:
+      enabled: false
+    collector:
+      enabled: false
+    ingester:
+      enabled: true
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+      # extraEnv:
+      # - name: SPAN_STORAGE_TYPE
+      #   value: cassandra
+      # - name: KAFKA_PRODUCER_BROKERS
+      #   value: jaeger-kafka-headless:9092
+      # - name: KAFKA_PRODUCER_TOPIC
+      #   value: jaeger_v1_test
+      # - name: KAFKA_PRODUCER_AUTHENTICATION
+      #   value: none

@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jaeger
+  namespace: istio-system
+spec:
+  releaseName: jaeger-elasticsearch
+  chart:
+    spec:
+      chart: ./charts/jaeger
+      sourceRef:
+        kind: GitRepository
+        name: jaeger
+        namespace: flux-system
+  dependsOn:
+  - name: istio-discovery
+  interval: 5m
+  values:
+    provisionDataStore:
+      cassandra: false
+      elasticsearch: true
+      kafka: false
+    elasticsearch:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+      image: "docker.elastic.co/elasticsearch/elasticsearch"
+      imageTag: "7.15.0"
+      replicas: 1
+      minimumMasterNodes: 1
+      clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
+    agent:
+      enabled: false
+    query:
+      enabled: false
+    ingester:
+      enabled: false
