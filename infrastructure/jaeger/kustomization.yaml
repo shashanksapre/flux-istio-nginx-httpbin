@@ -2,9 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: istio-system
 resources:
-  - release-agent.yaml
-  - release-collector.yaml
-  - release-elasticsearch.yaml
-  - release-ingester.yaml
-  - release-kafka.yaml
-  - release-query.yaml
+  # - release-agent.yaml
+  # - release-collector.yaml
+  # - release-elasticsearch.yaml
+  # - release-ingester.yaml
+  # - release-kafka.yaml
+  # - release-query.yaml
+  - release.yaml
