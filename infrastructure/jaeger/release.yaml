@@ -53,6 +53,14 @@ spec:
         annotations:
           kubernetes.io/ingress.class: nginx
           kubernetes.io/tls-acme: "true"
+    elasticsearch:
+      podAnnotations:
+        sidecar.istio.io/inject: "false"
+      image: "docker.elastic.co/elasticsearch/elasticsearch"
+      imageTag: "7.15.0"
+      replicas: 1
+      minimumMasterNodes: 1
+      clusterHealthCheckParams: 'wait_for_status=yellow&timeout=1s'
     ingester:
       enabled: true
       podAnnotations:
