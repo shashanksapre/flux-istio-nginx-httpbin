@@ -7,10 +7,10 @@ spec:
   # The interval at which to check the upstream for updates
   interval: 30m
   # The repository URL, can be a HTTP/S or SSH address
-  url: https://github.com/JanRK/httpbin
+  url: https://github.com/shashanksapre/httpbin
   # The Git reference to checkout and monitor for changes
   # (defaults to master)
   # For all available options, see:
   # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1.GitRepositoryRef
   ref:
-    branch: master
+    branch: updates
