@@ -1,4 +1,4 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: istio
@@ -11,6 +11,6 @@ spec:
   # The Git reference to checkout and monitor for changes
   # (defaults to master)
   # For all available options, see:
-  # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
+  # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1.GitRepositoryRef
   ref:
     branch: master

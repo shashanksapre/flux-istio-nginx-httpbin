@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: httpbin
@@ -20,5 +20,5 @@ spec:
       nginx.ingress.kubernetes.io/service-upstream: "true"
       nginx.ingress.kubernetes.io/upstream-vhost: httpbin.default.svc.cluster.local
       hosts:
-      - host: httpbin.local
-        paths: [ / ]
+        - host: httpbin.local
+          paths: [/]
