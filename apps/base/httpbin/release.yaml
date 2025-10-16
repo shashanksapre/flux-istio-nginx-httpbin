@@ -16,9 +16,11 @@ spec:
   values:
     ingress:
       enabled: true
-      kubernetes.io/ingress.class: nginx
-      nginx.ingress.kubernetes.io/service-upstream: "true"
-      nginx.ingress.kubernetes.io/upstream-vhost: httpbin.default.svc.cluster.local
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/service-upstream: "true"
+        nginx.ingress.kubernetes.io/upstream-vhost: httpbin.default.svc.cluster.local
+        traffic.sidecar.istio.io/excludeOutboundIPRanges: "10.96.0.1/32"
       hosts:
         - host: httpbin.local
           paths: [/]
