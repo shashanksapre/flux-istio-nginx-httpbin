@@ -10,7 +10,7 @@ spec:
       version: 4.7.0
       sourceRef:
         kind: HelmRepository
-        name: ingress-controller
+        name: ingress-nginx
         namespace: flux-system
       interval: 1m
   interval: 5m
